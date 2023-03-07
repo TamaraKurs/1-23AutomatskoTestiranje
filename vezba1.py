@@ -1,13 +1,21 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
+import unittest
 
-driver = webdriver.Chrome()
+class TestBalanceCheck(unittest.TestCase):
 
-#navigacija na stranicu
-navigateToPage = driver.get("https://www.nationalgeographic.com/")
+    def test(self):
+        driver = webdriver.Chrome()
 
-#pronalazenje elementa i klik na isti
-elementStranice = driver.find_element("id", "b7c38d77-1fdf-4e28-801f-1da62484143b").click()
+        #navigacija na stranicu
+        navigateToPage = driver.get("https://www.nationalgeographic.com/")
 
+        #verifikacija stranice
+        verification = driver.find_element(By.CLASS_NAME, "GeneralHeading__Header")
+
+        self.assertEqual("Tutorialspoint", "Tutorialspoint")
+    
+t = TestBalanceCheck()
+t.test()
 
