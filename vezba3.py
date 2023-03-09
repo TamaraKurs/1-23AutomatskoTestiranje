@@ -17,7 +17,7 @@ driver.implicitly_wait(10)
 
 #logovati se na stranicu
 userName = driver.find_element("id", "username").send_keys("tamara.mitrovic")
-password = driver.find_element("id","password").send_keys("Sekulicka94*")
+password = driver.find_element("id","password").send_keys("123")
 logInButton = driver.find_element("id","loginbtn").click()
 
 #eksplicitno cekanje
